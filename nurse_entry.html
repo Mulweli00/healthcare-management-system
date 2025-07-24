@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Nurse Checkup Entry</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>Nurse Checkup Form</h2>
+
+<a href="../appointment_scheduling/view_appointments.php" target="_blank">View Appointments</a>
+
+  <form action="submit_nurse.php" method="POST">
+    <label>Patient Username:</label><br>
+    <input type="text" name="patient_username" required><br><br>
+
+    <label>Appointment ID:</label><br>
+    <input type="number" name="appointment_id" required><br><br>
+
+    <label>Nurse ID (Numeric):</label><br>
+    <input type="number" name="nurse_id" required><br><br>
+
+    <label>Vitals / Symptoms / Observations:</label><br>
+    <textarea name="nurse_notes" rows="5" required></textarea><br><br>
+
+    <input type="submit" value="Submit Checkup">
+  </form>
+</body>
+</html>

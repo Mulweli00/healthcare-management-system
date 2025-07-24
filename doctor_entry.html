@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Doctor Consultation Entry</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>Doctor Consultation Form</h2>
+
+<a href="../medical_records/view_records.php" target="_blank">View Medical Records</a>
+
+  <form action="submit_doctor.php" method="POST">
+    <label>Patient Username:</label><br>
+    <input type="text" name="patient_username" required><br><br>
+
+    <label>Doctor ID (Numeric):</label><br>
+    <input type="number" name="doctor_id" required><br><br>
+
+    <label>Diagnosis:</label><br>
+    <textarea name="diagnosis" rows="4" required></textarea><br><br>
+
+    <label>Prescription / Treatment:</label><br>
+    <textarea name="prescription" rows="4" required></textarea><br><br>
+
+    <input type="submit" value="Submit Diagnosis">
+  </form>
+</body>
+</html>
