@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Book Appointment</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>Appointment Scheduling</h2>
+  <form action="book_appointment.php" method="POST">
+    <label>Patient Username:</label><br>
+    <input type="text" name="username" required><br><br>
+
+    <label>Appointment Date:</label><br>
+    <input type="date" id="appt_date" name="appointment_date" required><br><br>
+
+    <label>Appointment Time:</label><br>
+    <input type="time" name="time" required><br><br>
+
+    <label>Reason for Appointment:</label><br>
+    <textarea name="reason" rows="4" cols="40"></textarea><br><br>
+
+    <input type="submit" value="Book Appointment">
+  </form>
+<script>
+window.onload = function () {
+  const dateInput = document.getElementById('appt_date');
+  const today = new Date().toISOString().split('T')[0];
+  dateInput.setAttribute('min', today); // Block past dates
+};
+</script>
+</body>
+</html>
+
