@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Billing Entry</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>Billing Form</h2>
+
+<a href="../medical_records/view_records.php" target="_blank">View Medical Records</a>
+
+<form method="POST" action="submit_billing.php">
+
+  <label>Patient Username:</label><br>
+  <input type="text" name="patient_username" required><br><br>
+
+  <label>Appointment ID:</label><br>
+  <input type="text" name="appointment_id" required><br><br>
+
+  <label>Medical Record ID:</label><br>
+  <input type="text" name="medical_record_id" required><br><br>
+
+  <label>Doctor Fee:</label><br>
+  <input type="number" id="doctor_charge" name="doctor_charge" oninput="calcTotal()" required><br><br>
+
+  <label>Medication Fee:</label><br>
+  <input type="number" id="medication_charge" name="medication_charge" oninput="calcTotal()" required><br><br>
+
+  <label>Lab Fee:</label><br>
+  <input type="number" id="lab_charge" name="lab_charge" oninput="calcTotal()" required><br><br>
+
+  <label>Other Fee:</label><br>
+  <input type="number" id="other_charge" name="other_charge" oninput="calcTotal()" required><br><br>
+
+  <label><strong>Total:</strong></label><br>
+  <input type="text" id="total_charge" name="total_charge" readonly><br><br>
+
+  <input type="submit" value="Submit Billing">
+</form>
+<script>
+function calcTotal() {
+  const doc = parseFloat(document.getElementById("doctor_charge").value) || 0;
+  const meds = parseFloat(document.getElementById("medication_charge").value) || 0;
+  const lab = parseFloat(document.getElementById("lab_charge").value) || 0;
+  const other = parseFloat(document.getElementById("other_charge").value) || 0;
+
+  const total = doc + meds + lab + other;
+  document.getElementById("total_charge").value = total.toFixed(2);
+}
+</script>
+</body>
+</html>
