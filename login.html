@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>Healthcare System Login</h2>
+  <form action="login.php" method="POST">
+  <label>Username:</label><br>
+  <input type="text" name="username" required><br><br>
+
+  <label>Password:</label><br>
+  <input type="password" name="password" id="password" required>
+  <input type="checkbox" id="showPassword" onclick="togglePassword()"> Show Password<br><br>
+
+  <label>Role:</label><br>
+  <select name="role" required>
+    <option value="admin">Admin</option>
+    <option value="nurse">Nurse</option>
+    <option value="doctor">Doctor</option>
+    <option value="patient">Patient</option>
+  </select><br><br>
+
+  <input type="submit" value="Login">
+</form>
+  <p>Not registered? <a href="../patient_registration/index.html">Register here</a></p>
+<script>
+function togglePassword() {
+  const pw = document.getElementById("password");
+  pw.type = pw.type === "password" ? "text" : "password";
+}
+</script>
+</body>
+</html>

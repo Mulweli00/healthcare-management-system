@@ -1,0 +1,29 @@
+body {
+  background: #fefce8;
+  font-family: Tahoma, sans-serif;
+  padding: 30px;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  background: #ffc107;
+  margin: 10px auto;
+  width: 300px;
+  border-radius: 8px;
+}
+
+ul li a {
+  color: black;
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+}
+
+ul li:hover {
+  background: #d39e00;
+}
